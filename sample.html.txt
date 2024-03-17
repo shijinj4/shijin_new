@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Backend Data Display</title>
+</head>
+<body>
+
+<button onclick="getBackend()">Fetch Data</button>
+<div id="frontend"></div>
+
+<script>
+function getBackend() {
+    const url = 'http://localhost:5000/';
+    fetch(url)
+    .then(response => response.json())
+    .then(json => {
+        console.log(json);
+        document.getElementById("frontend").innerHTML = JSON.stringify(json);
+    })
+    .catch(error => {
+        console.error('Error fetching data:', error);
+    });
+}
+</script>
+
+</body>
+</html>
