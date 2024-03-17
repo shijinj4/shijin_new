@@ -1,29 +1,27 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Backend Data Display</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Frontend Application</title>
 </head>
 <body>
-
 <button onclick="getBackend()">Fetch Data</button>
 <div id="frontend"></div>
-
-<script>
-function getBackend() {
-    const host = 'http://localhost'; // Change this to your backend host
-    const port = '5000'; // Change this to your backend port
-    const url = `${host}:${port}/`;
-    fetch(url)
-    .then(response => response.json())
-    .then(json => {
-        console.log(json);
-        document.getElementById("frontend").innerHTML = JSON.stringify(json);
-    })
-    .catch(error => {
-        console.error('Error fetching data:', error);
-    });
-}
+ 
+    <script>
+        function getBackend() {
+            const url = '/api'; // Assuming your backend runs on /api route
+            fetch(url)
+            .then(response => response.json())  
+            .then(json => {
+                console.log(json);
+                document.getElementById("frontend").innerHTML = JSON.stringify(json);
+            })
+            .catch(error => {
+                console.error('Error fetching data:', error);
+            });
+        }
 </script>
-
 </body>
 </html>
