@@ -10,7 +10,7 @@
 
 <script>
 function getBackend() {
-    const url = 'http://localhost:5000/';
+    const url = '/api'; // Assuming your backend runs on /api route
     fetch(url)
     .then(response => response.json())
     .then(json => {
