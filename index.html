@@ -10,7 +10,9 @@
 
 <script>
 function getBackend() {
-    const url = '/api'; // Assuming your backend runs on /api route
+    const host = 'http://localhost'; // Change this to your backend host
+    const port = '5000'; // Change this to your backend port
+    const url = `${host}:${port}/`;
     fetch(url)
     .then(response => response.json())
     .then(json => {
